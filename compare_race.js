@@ -93,7 +93,7 @@ function plotGraph() {
 	const driver2 = driver2Select.value;
   
 	// Construction de l'URL avec les valeurs des dropdowns
-	const url = `http://127.0.0.1:5000/plot/compare/race/${year}/${race}/${driver1}/${driver2}`;
+	const url = `https://api.f1tools.edmee.online/plot/compare/race/${year}/${race}/${driver1}/${driver2}`;
   
 	// Envoi de la requête
 	fetch(url)

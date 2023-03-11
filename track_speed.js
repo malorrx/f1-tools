@@ -95,7 +95,7 @@ function plotGraph() {
 
   
 	// Construction de l'URL avec les valeurs des dropdowns
-	const url = `http://127.0.0.1:5000/plot/track/speed/${year}/${race}/${driver1}`;
+	const url = `https://api.f1tools.edmee.online/plot/track/speed/${year}/${race}/${driver1}`;
   
 	// Envoi de la requête
 	fetch(url)

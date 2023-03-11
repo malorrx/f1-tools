@@ -7,6 +7,7 @@ select {
     padding: 8px;
     width: 200px;
     border-radius: 4px;
+    display: block;
   }
   
   /* Style pour la flèche du drop down */
@@ -51,10 +52,29 @@ select {
     color: #fff;
   }
 
+.select-group{
+  display: inline-block;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+}
+.form{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 20px auto;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
 
 /* Style pour les éléments button */
 button {
-    background-color: #0077c2;
+    background-color: #005ca9;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -65,7 +85,7 @@ button {
   
   /* Style pour le hover des éléments button */
   button:hover {
-    background-color: #005ca9;
+    background-color: #0b4b80;
   }
   
   /* Style pour le focus des éléments button */
@@ -74,13 +94,12 @@ button {
     box-shadow: 0 0 0 3px rgba(0, 119, 194, 0.4);
   }
   
-  /* Style pour les éléments label */
-  label {
-    color: #333;
-    font-size: 16px;
-    margin-bottom: 5px;
-    display: inline-block;
-  }
+#plot-btn{
+    display: block; /* Le bouton sera affiché comme un élément de type bloc */
+    margin: 10px auto; /* Centrage horizontal */
+    text-align: center; /* Centrage vertical */
+  
+}
 
   .plot-handler {
     display: flex;
@@ -92,14 +111,13 @@ button {
     max-width: 90%;
   }
 
-
-
   #loader {
     display: none;
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 20%;
   }
   
   #loader img {
@@ -107,9 +125,6 @@ button {
     margin: 0 auto;
   }
   
-h1{
-    color:#005ca9;
-}  
 
 .error {
     display:none;
@@ -149,4 +164,54 @@ h1{
     color: #444;
   }
   
-  
+  body {
+    background-color: #F7F7F7;
+    font-family: Arial, sans-serif;
+  }
+  #menu {
+    background-color: #FFFFFF;
+    width: 50%;
+    height: auto;
+    margin: auto;
+    margin-top: 5%;
+    position: flex;
+    top: 0; left: 0; bottom: 0; right: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #005ca9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  #menu a {
+    color: #005ca9;
+    font-size: 24px;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #005ca9;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  #menu a:hover {
+    background-color: #005ca9;
+    color: #FFFFFF;
+  }
+  h1 {
+    text-align: center;
+    margin-top: 1em;
+    font-size: 2em;
+    color: #005ca9;
+  }
+  p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #666666;
+  }

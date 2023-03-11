@@ -17,19 +17,27 @@
         <img src="loader.gif" alt="Loading...">
       </div>
 	<h1>F1-Tools - Comparaison Qualification</h1>
-	
-	<label for="year-select">Année :</label>
-	<select class="select" id="year-select"></select>
-	
-	<label for="race-select">Course :</label>
-	<select class="select" id="race-select"></select>
-	
-	<label for="driver1-select">Pilote 1 :</label>
-	<select class="select" id="driver1-select"></select>
-	
-	<label for="driver2-select">Pilote 2 :</label>
-	<select class="select" id="driver2-select"></select>
-	
+	<div class="info">
+		<p class="info-text">Cette page permet de comparer les temps de qualification de deux pilotes sur une même course.</p>
+	</div>
+	<div class="form">
+		<div class="select-group">
+			<label for="year-select">Année</label>
+			<select class="select" id="year-select"></select>
+		</div>
+		<div class="select-group">
+			<label for="race-select">Course</label>
+			<select class="select" id="race-select"></select>
+		</div>
+		<div class="select-group">
+			<label for="driver1-select">Pilote</label>
+			<select class="select" id="driver1-select"></select>
+		</div>
+		<div class="select-group">
+			<label for="driver2-select">Pilote</label>
+			<select class="select" id="driver2-select"></select>
+		</div>
+	</div>
 	<button classh="button" id="plot-btn">Afficher le graphique</button>
 	
 	<div class="plot-handler" id="plot-container"></div>

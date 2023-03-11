@@ -114,16 +114,11 @@ function plotGraph() {
 			// Création de l'élément image
 			let img = plotContainer.querySelector("img");
 			if (!img) {
-			a = document.createElement("a");
-			a.alt = `Lien de l'image`;
-			a.href = url;
-			a.id = "plot-link";
-			plotContainer.appendChild(a);
-	
-			img = document.createElement("img");
-			img.classList.add("plot");
-			img.alt = `Graphique comparant la qualification de ${driver1} et ${driver2} à ${race} en ${year}`;
-			a.appendChild(img);
+		
+				img = document.createElement("img");
+				img.classList.add("plot");
+				img.alt = `Graphique comparant la qualification de ${driver1} et ${driver2} à ${race} en ${year}`;
+				plotContainer.appendChild(img);
 			}
   
 			img.onload = () => {

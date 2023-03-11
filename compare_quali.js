@@ -25,7 +25,7 @@ years.forEach((year) => {
 async function getDrivers() {
 	year = yearSelect.value;
 	try {
-		const response = await fetch(`http://localhost:5000/drivers/${year}`);
+		const response = await fetch(`https://f1tools.edmee.online/drivers/${year}`);
 		const data = await response.json();
 		drivers = data[0].drivers;
 		console.log(data);
@@ -55,7 +55,7 @@ async function getDrivers() {
 async function getRaces(){
 	year = yearSelect.value;
 	try {
-		const response = await fetch(`http://localhost:5000/races/${year}`);
+		const response = await fetch(`https://f1tools.edmee.online/races/${year}`);
 		const data = await response.json();
 		races = data[0].races;
 		console.log(data);
@@ -100,7 +100,7 @@ function plotGraph() {
 	hideError();
 
 	// Construction de l'URL avec les valeurs des dropdowns
-	const url = `http://127.0.0.1:5000/plot/compare/qualif/${year}/${race}/${driver1}/${driver2}`;
+	const url = `https://f1tools.edmee.online/plot/compare/qualif/${year}/${race}/${driver1}/${driver2}`;
   
 	// Envoi de la requête
 	fetch(url)	

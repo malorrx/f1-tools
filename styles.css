@@ -210,6 +210,10 @@ button {
     font-size: 2em;
     color: #005ca9;
   }
+  h1 a {
+    color: #005ca9;
+    text-decoration: none;
+  }
   p {
     text-align: center;
     margin-top: 20px;

@@ -7,23 +7,37 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+	<div class="error">
+		<div class="error-message">
+			<p class="error-text"></p>
+		</div>
+		<span class="close-btn">&times;</span>
+	</div>
     <div id="loader">
         <img src="loader.gif" alt="Loading...">
       </div>
-	<h1>F1-Tools - Comparaison Rythme de course</h1>
-	
-	<label for="year-select">Année :</label>
-	<select class="select" id="year-select"></select>
-	
-	<label for="race-select">Course :</label>
-	<select class="select" id="race-select"></select>
-	
-	<label for="driver1-select">Pilote 1 :</label>
-	<select class="select" id="driver1-select"></select>
-	
-	<label for="driver2-select">Pilote 2 :</label>
-	<select class="select" id="driver2-select"></select>
-	
+	<h1><a href="index.html">F1-Tools</a>  - Comparaison Rythme de course</h1>
+	<div class="info">
+		<p class="info-text">Cette page permet de comparer le rythme de course de deux pilotes sur une même course.</p>
+	</div>
+	<div class="form">
+		<div class="select-group">
+			<label for="year-select">Année</label>
+			<select class="select" id="year-select"></select>
+		</div>
+		<div class="select-group">
+			<label for="race-select">Course</label>
+			<select class="select" id="race-select"></select>
+		</div>
+		<div class="select-group">
+			<label for="driver1-select">Pilote 1</label>
+			<select class="select" id="driver1-select"></select>
+		</div>
+		<div class="select-group">
+			<label for="driver2-select">Pilote 2</label>
+			<select class="select" id="driver2-select"></select>
+		</div>
+	</div>
 	<button classh="button" id="plot-btn">Afficher le graphique</button>
 	
 	<div class="plot-handler" id="plot-container"></div>

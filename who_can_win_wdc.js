@@ -18,10 +18,10 @@ async function get_table(){
             raw.innerHTML += "<td>" + driver['points'] + "</td>";
             raw.innerHTML += "<td>" + driver['max_points'] + "</td>";
             if (driver['can_win'] == "Yes") {
-                raw.innerHTML += "<td style='color: green;'>Oui</td>";
+                raw.innerHTML += "<td style='color: #005ca9;'>Oui</td>";
             }
             else {
-                raw.innerHTML += "<td  style='color: red;'>Non</td>";
+                raw.innerHTML += "<td  style='color: gray;'>Non</td>";
             }
             tableContent.appendChild(raw)
 

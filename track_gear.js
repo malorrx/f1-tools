@@ -96,7 +96,7 @@ function plotGraph() {
 
   
 	// Construction de l'URL avec les valeurs des dropdowns
-	const url = `https://api.f1tools.edmee.online/plot/track/speed/${year}/${race}/${driver1}`;
+	const url = `https://api.f1tools.edmee.online/plot/track/gear/${year}/${race}/${driver1}`;
   
 	// Envoi de la requête
 	fetch(url)
@@ -112,7 +112,7 @@ function plotGraph() {
 			if (!img) {
 				img = document.createElement("img");
 				img.classList.add("plot");
-				img.alt = `Graphique affichant la vitesse en qualification de ${driver1} à ${raceSelect.value} en ${year}`;
+				img.alt = `Graphique affichant les changement de vitesse en qualification de ${driver1} à ${raceSelect.value} en ${year}`;
 				plotContainer.appendChild(img);
 
 			}

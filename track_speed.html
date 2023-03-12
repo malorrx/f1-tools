@@ -5,22 +5,39 @@
 	<title>F1-Tools - Vitesse sur un tour</title>
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="w3.css">
 </head>
 <body>
+    <div class="error w3-panel w3-pale-red  ">
+			<h3>Erreur</h3>
+			<p class="error-text"></p>
+		<span onclick="this.parentElement.style.display='none'"
+			class="w3-button w3-display-topright close-btn">&times;</span>
+	</div>	  
     <div id="loader">
         <img src="loader.gif" alt="Loading...">
       </div>
-	<h1>F1-Tools - Vitesse sur un tour</h1>
-	
-	<label for="year-select">Année :</label>
-	<select class="select" id="year-select"></select>
-	
-	<label for="race-select">Course :</label>
-	<select class="select" id="race-select"></select>
-	
-	<label for="driver1-select">Pilote 1 :</label>
-	<select class="select" id="driver1-select"></select>
-	
+	  <a id="home-btn" href="index.html">
+		<img src="home.png" alt="Home">
+	</a>
+	<h1><a href="index.html">F1-Tools</a> - Visualisation de la vitesse sur un tour</h1>
+	<div class="info">
+		<p class="info-text">Cette page permet de visualiser la vitesse d'un pilote sur un tour qualificatif.</p>
+	</div>
+	<div class="form">
+		<div class="select-group">
+			<label for="year-select">Année</label>
+			<select class="select" id="year-select"></select>
+		</div>
+		<div class="select-group">
+			<label for="race-select">Course</label>
+			<select class="select" id="race-select"></select>
+		</div>
+		<div class="select-group">
+			<label for="driver1-select">Pilote 1</label>
+			<select class="select" id="driver1-select"></select>
+		</div>
+	</div>
 	<button classh="button" id="plot-btn">Afficher le graphique</button>
 	
 	<div class="plot-handler" id="plot-container"></div>

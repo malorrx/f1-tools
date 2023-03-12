@@ -104,11 +104,16 @@ button {
 }
 
   .plot-handler {
-    display: flex;
-    justify-content: center;
+    display: block;
     max-width:80% ;
+    margin: 0 auto; 
+    justify-content: center;
   }
-  
+  .plot-handler img{
+    display: block;
+    margin: 0 auto;
+  }
+
   .plot {
     border: 3px solid #333;
     max-width: 90%;

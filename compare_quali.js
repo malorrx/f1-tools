@@ -96,6 +96,7 @@ function plotGraph() {
 	const race = races.indexOf(raceSelect.value) + 1;
 	const driver1 = driver1Select.value;
 	const driver2 = driver2Select.value;
+
 	// Cacher l'erreur
 	hideError();
 
@@ -164,3 +165,4 @@ function hideError() {
 }
 
 closeBtn.addEventListener("click", hideError);
+

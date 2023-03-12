@@ -92,35 +92,50 @@ function plotGraph() {
 	const driver1 = driver1Select.value;
 	const driver2 = driver2Select.value;
   
+	//Caher l'erreur
+	hideError();
+
 	// Construction de l'URL avec les valeurs des dropdowns
 	const url = `https://api.f1tools.edmee.online/plot/compare/race/${year}/${race}/${driver1}/${driver2}`;
   
 	// Envoi de la requête
 	fetch(url)
-	  .then((response) => response.blob())
-	  .then((blob) => {
-		// Création de l'élément image
-		let img = plotContainer.querySelector("img");
-		if (!img) {
-			a = document.createElement("a");
-			a.alt = `Lien de l'image`;
-			a.href = url;
-			a.id = "plot-link"
-			plotContainer.appendChild(a);
-
-			img = document.createElement("img");
-			img.classList.add("plot");
-			img.alt = `Graphique comparant la course de ${driver1} et ${driver2} à ${race} en ${year}`;
-			a.appendChild(img);
-
+		.then((response) => {
+		if (!response.ok) {
+			return response.text().then(text => {throw new Error(text)})
 		}
-		img.onload = () => {
-		  // Masquer l'icône de chargement
-		  document.getElementById("loader").style.display = "none";
-		};
-		img.src = URL.createObjectURL(blob);
+		return response.blob();
 	  })
-	  .catch((error) => console.error(error));
+	  	.then((blob) => {
+			// Création de l'élément image
+			let img = plotContainer.querySelector("img");
+			if (!img) {
+				a = document.createElement("a");
+				a.alt = `Lien de l'image`;
+				a.href = url;
+				a.id = "plot-link"
+				plotContainer.appendChild(a);
+
+				img = document.createElement("img");
+				img.classList.add("plot");
+				img.alt = `Graphique comparant la course de ${driver1} et ${driver2} à ${race} en ${year}`;
+				a.appendChild(img);
+
+			}
+			img.onload = () => {
+			// Masquer l'icône de chargement
+			document.getElementById("loader").style.display = "none";
+			};
+			img.src = URL.createObjectURL(blob);
+	  	})
+	  	.catch((error) => {
+			console.error(error);
+			// Afficher l'erreur dans la div "error"
+			json_error = JSON.parse(error.message);
+			showError(`Erreur: ${json_error.error}`);
+			// Masquer l'icône de chargement
+			document.getElementById("loader").style.display = "none";
+		});
   }
 
 // Ajout de l'événement au bouton
@@ -130,6 +145,20 @@ plotBtn.addEventListener("click", plotGraph);
 yearSelect.addEventListener("change", getDrivers);
 yearSelect.addEventListener("change", getRaces);
 
+// Getsion des erreurs
+const errorDiv = document.querySelector(".error");
+const errorText = document.querySelector(".error-text");
+const closeBtn = document.querySelector(".close-btn");
 
+function showError(message) {
+  errorText.innerHTML = message;
+  errorDiv.style.display = "block";
+}
+
+function hideError() {
+  errorDiv.style.display = "none";
+}
+
+closeBtn.addEventListener("click", hideError);
 
 

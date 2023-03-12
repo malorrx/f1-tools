@@ -86,6 +86,7 @@ getDrivers();
 function plotGraph() {
 	// Afficher l'icône de chargement
 	document.getElementById("loader").style.display = "block";
+	plotBtn.disabled = true;
 
   
 	// Récupération des valeurs des dropdowns
@@ -99,30 +100,38 @@ function plotGraph() {
   
 	// Envoi de la requête
 	fetch(url)
-	  .then((response) => response.blob())
-	  .then((blob) => {
-		// Création de l'élément image
-		let img = plotContainer.querySelector("img");
-		if (!img) {
-			a = document.createElement("a");
-			a.alt = `Lien de l'image`;
-			a.href = url;
-			a.id = "plot-link"
-			plotContainer.appendChild(a);
+		.then((response) => {
+			if (!response.ok) {
+				return response.text().then(text => {throw new Error(text)})
+			}
+			return response.blob();
+		})
+		.then((blob) => {
+			// Création de l'élément image
+			let img = plotContainer.querySelector("img");
+			if (!img) {
+				img = document.createElement("img");
+				img.classList.add("plot");
+				img.alt = `Graphique affichant la vitesse en qualification de ${driver1} à ${race} en ${year}`;
+				plotContainer.appendChild(img);
 
-			img = document.createElement("img");
-			img.classList.add("plot");
-			img.alt = `Graphique affichant la vitesse en qualification de ${driver1} à ${race} en ${year}`;
-			a.appendChild(img);
-
-		}
-		img.onload = () => {
-		  // Masquer l'icône de chargement
-		  document.getElementById("loader").style.display = "none";
-		};
-		img.src = URL.createObjectURL(blob);
-	  })
-	  .catch((error) => console.error(error));
+			}
+			img.onload = () => {
+			// Masquer l'icône de chargement
+			document.getElementById("loader").style.display = "none";
+			};
+			img.src = URL.createObjectURL(blob);
+			plotBtn.disabled = false;
+		})
+		.catch((error) => {
+			plotBtn.disabled = false;
+			console.error(error);
+			// Afficher l'erreur dans la div "error"
+			json_error = JSON.parse(error.message);
+			showError(json_error.error);
+			// Masquer l'icône de chargement
+			document.getElementById("loader").style.display = "none";
+		});
   }
   
 
@@ -132,3 +141,20 @@ plotBtn.addEventListener("click", plotGraph);
 // Ajout de l'événement au selecteur de date
 yearSelect.addEventListener("change", getDrivers);
 yearSelect.addEventListener("change", getRaces);
+
+
+// Getsion des erreurs
+const errorDiv = document.querySelector(".error");
+const errorText = document.querySelector(".error-text");
+const closeBtn = document.querySelector(".close-btn");
+
+function showError(message) {
+  errorText.innerHTML = message;
+  errorDiv.style.display = "block";
+}
+
+function hideError() {
+  errorDiv.style.display = "none";
+}
+
+closeBtn.addEventListener("click", hideError);

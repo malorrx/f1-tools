@@ -90,7 +90,7 @@ getDrivers();
 function plotGraph() {
 	// Afficher l'icône de chargement
 	document.getElementById("loader").style.display = "block";
-  
+	plotBtn.disabled = true;
 	// Récupération des valeurs des dropdowns
 	const year = yearSelect.value;
 	const race = races.indexOf(raceSelect.value) + 1;
@@ -127,8 +127,10 @@ function plotGraph() {
 			document.getElementById("loader").style.display = "none";
 			};
 			img.src = URL.createObjectURL(blob);
+			plotBtn.disabled = false;
 		})
 		.catch((error) => {
+			plotBtn.disabled = false;
 			console.error(error);
 			// Afficher l'erreur dans la div "error"
 			json_error = JSON.parse(error.message);

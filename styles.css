@@ -102,7 +102,10 @@ button {
     text-align: center; /* Centrage vertical */
   
 }
-
+#plot-btn:disabled{
+    background-color: #ccc;
+    cursor: not-allowed;
+}
   .plot-handler {
     display: block;
     max-width:80% ;
@@ -136,41 +139,25 @@ button {
 
 .error {
     display:none;
-    position: fixed;
-    top: 1%;
-    right: 1%;
-    z-index: 9999;
-    background-color: #E22866;
-    border-width: 1px;
     border-radius: 5px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    border-color: #6c0f2e;
-    border-style: solid;
+    position: absolute;
+    max-width: 20%;
+    top: 0%;
+    right: 1%;
   }
   
   .error-message {
     position: relative;
     display: inline-block;
     padding: 0.5em 1em;
-    color: white;
+    
   }
   
   .close-btn {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: -0.25em;
-    margin-left: 0em;
-    font-size: 2em;
-    font-weight: bold;
-    color: #6c0f2e;
-    cursor: pointer;
-    padding: 0;
+    border-radius: 5px;
   }
   
-  .close-btn:hover {
-    color: #444;
-  }
   
   body {
     background-color: #F7F7F7;
@@ -219,6 +206,7 @@ button {
   h1 a {
     color: #005ca9;
     text-decoration: none;
+    font-weight: bold;
   }
   p {
     text-align: center;
@@ -235,3 +223,5 @@ button {
 #home-btn img{
   height: 100%;
 }
+
+h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0}

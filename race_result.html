@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>F1-Tools - Résultat d'une course</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="w3.css">
+</head>
+<body>
+    <div class="error w3-panel w3-pale-red  ">
+			<h3>Erreur</h3>
+			<p class="error-text"></p>
+		<span onclick="this.parentElement.style.display='none'"
+			class="w3-button w3-display-topright close-btn">&times;</span>
+	</div>	  
+    <div id="loader">
+        <img src="loader.gif" alt="Loading...">
+      </div>
+	  <a id="home-btn" href="index.html">
+		<img src="home.png" alt="Home">
+	</a>
+	<h1><a href="index.html"><img alt="logo" src="logo.png" class="icon">F1-Tools</a> - Résultats</h1>
+	<div class="info">
+		<p class="info-text">Cette page permet de visualiser les résultats d'une course de F1.</p>
+	</div>
+	<div class="form">
+		<div class="select-group">
+			<label for="year-select">Année</label>
+			<select class="select" id="year-select"></select>
+		</div>
+		<div class="select-group">
+			<label for="race-select">Course</label>
+			<select class="select" id="race-select"></select>
+		</div>
+	</div>
+	<button classh="button" id="plot-btn">Afficher les résultast</button>
+	<div class="table_handler">
+        <table class="w3-table-all w3-centered" id="table-content">
+        </table>
+    </div>
+	
+	<script src="race_result.js"></script>
+</body>
+</html>

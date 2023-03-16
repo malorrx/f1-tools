@@ -168,7 +168,7 @@ button {
     width: 50%;
     height: auto;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 2em;
     position: flex;
     top: 0; left: 0; bottom: 0; right: 0;
     text-align: center;

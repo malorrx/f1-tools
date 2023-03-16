@@ -99,6 +99,7 @@ async function get_table(){
     document.getElementById("loader").style.display = "none";
 	}
 }
+
 // Ajout de l'événement au bouton
 plotBtn.addEventListener("click", get_table);
 

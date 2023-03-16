@@ -21,7 +21,7 @@ years.forEach((year) => {
 async function getRaces(){
 	year = yearSelect.value;
 	try {
-		const response = await fetch(`https://api.f1tools.edmee.online/races/${year}`);
+		const response = await fetch(`https://api.f1tools.fr/races/${year}`);
 		const data = await response.json();
 		races = data[0].races;
 		console.log(data);
@@ -64,7 +64,7 @@ async function get_table(){
   //Envoie de la requete
 	try {
     hideError();
-		const response = await fetch(`https://api.f1tools.edmee.online/table/results/race?year=${year}&race=${gp}`);
+		const response = await fetch(`https://api.f1tools.fr/table/results/race?year=${year}&race=${gp}`);
 		const data = await response.json();
     drivers = data;
 		console.log(data);

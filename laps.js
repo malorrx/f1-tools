@@ -31,7 +31,7 @@ sessions.forEach((session) => {
 async function getRaces(){
 	year = yearSelect.value;
 	try {
-		const response = await fetch(`https://api.f1tools.edmee.online/races/${year}`);
+		const response = await fetch(`https://api.f1tools.fr/races/${year}`);
 		const data = await response.json();
 		races = data[0].races;
 		console.log(data);
@@ -54,7 +54,7 @@ async function getRaces(){
 async function getDrivers() {
 	year = yearSelect.value;
 	try {
-		const response = await fetch(`https://api.f1tools.edmee.online/drivers/${year}`);
+		const response = await fetch(`https://api.f1tools.fr/drivers/${year}`);
 		const data = await response.json();
 		drivers = data[0].drivers;
 		console.log(data);
@@ -101,7 +101,7 @@ async function get_table(){
   //Envoie de la requete
 	try {
     hideError();
-		const response = await fetch(`https://api.f1tools.edmee.online/table/laps?year=${year}&race=${gp}&session=${ses}&driver=${driver}`);
+		const response = await fetch(`https://api.f1tools.fr/table/laps?year=${year}&race=${gp}&session=${ses}&driver=${driver}`);
 		const data = await response.json();
     laps = data;
 		console.log(data);

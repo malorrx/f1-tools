@@ -7,7 +7,7 @@ const tableContent = document.getElementById("table-content");
 //
 async function get_table(){
 	try {
-		const response = await fetch(`https://api.f1tools.edmee.online/table/can_win_chamionship`);
+		const response = await fetch(`https://api.f1tools.fr/table/can_win_chamionship`);
 		const data = await response.json();
         drivers = data[0].drivers;
 		console.log(drivers);

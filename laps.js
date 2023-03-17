@@ -144,8 +144,11 @@ async function get_table(){
 			td = document.createElement("td");
 			td.appendChild(img);
 			raw.appendChild(td);
-			if (lap['IsAccurate'] == false)
-            	raw.style.color = "gray";
+			if (lap['IsAccurate'] == false){
+				raw.style.color = "gray";
+				img.style.filter = "grayscale(50%)";
+			}
+            	
             tableContent.appendChild(raw);
         });
         plotBtn.disabled = false;

@@ -1,0 +1,97 @@
+/* Style pour tous les éléments select */
+select {
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+    color: #333;
+    font-size: 16px;
+    padding: 8px;
+    width: 200px;
+    border-radius: 4px;
+    display: block;
+  }
+  
+  /* Style pour la flèche du drop down */
+  select::-ms-expand {
+    display: none;
+  }
+  
+  select::-webkit-select {
+    display: none;
+  }
+  
+  select::after {
+    content: "\25BC";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #666;
+  }
+  
+  /* Style pour le hover du drop down */
+  select:hover {
+    border-color: #aaa;
+  }
+  
+  /* Style pour le focus du drop down */
+  select:focus {
+    border-color: #333;
+    outline: none;
+  }
+  
+  /* Style pour les options du drop down */
+  option {
+    background-color: #f7f7f7;
+    color: #333;
+  }
+  
+  /* Style pour le hover et la sélection des options du drop down */
+  option:hover,
+  option:selected {
+    background-color: #0077c2;
+    color: #fff;
+  }
+
+.select-group{
+  display: inline-block;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+  min-width: 200px;
+}
+.form{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+
+/* Style pour les éléments button */
+button {
+    background-color: #005ca9;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Style pour le hover des éléments button */
+  button:hover {
+    background-color: #0b4b80;
+  }
+  
+  /* Style pour le focus des éléments button */
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 119, 194, 0.4);
+  }

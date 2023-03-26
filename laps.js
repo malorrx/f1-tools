@@ -106,14 +106,14 @@ async function get_table(){
     laps = data;
 		console.log(data);
     tableContent.innerHTML = "<tr> \
-                                      <th class='w3-center'>Tour</th> \
-                                      <th class='w3-center'>Temps</th> \
-                                      <th class='w3-center'>Secteur 1</th> \
-                                      <th class='w3-center'>Secteur 2</th> \
-                                      <th class='w3-center'>Secteur 3</th> \
-                                      <th class='w3-center'>Speed Trap</th> \
-                                      <th class='w3-center'>Usure</th> \
-                                      <th class='w3-center'>Pneu</th> \
+                                      <th>Tour</th> \
+                                      <th >Temps</th> \
+                                      <th >Secteur 1</th> \
+                                      <th >Secteur 2</th> \
+                                      <th >Secteur 3</th> \
+                                      <th >Speed Trap</th> \
+                                      <th>Usure</th> \
+                                      <th>Pneu</th> \
                                       </tr>";
 		// Continuez ici le traitement de votre code
         laps.forEach(lap => {      
@@ -145,8 +145,7 @@ async function get_table(){
 			td.appendChild(img);
 			raw.appendChild(td);
 			if (lap['IsAccurate'] == false){
-				raw.style.color = "gray";
-				img.style.filter = "grayscale(50%)";
+				raw.classList.add("inaccurate_raw");
 			}
             	
             tableContent.appendChild(raw);

@@ -1,0 +1,26 @@
+  
+#plot-btn{
+    display: block; /* Le bouton sera affiché comme un élément de type bloc */
+    margin: 10px auto; /* Centrage horizontal */
+    text-align: center; /* Centrage vertical */
+  
+}
+#plot-btn:disabled{
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+  .plot-handler {
+    display: block;
+    max-width:80% ;
+    margin: 0 auto 20px auto; 
+    justify-content: center;
+  }
+  .plot-handler img{
+    display: block;
+    margin: 0 auto;
+  }
+
+  .plot {
+    border: 3px solid #333;
+    max-width: 90%;
+  }

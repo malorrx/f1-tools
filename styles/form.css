@@ -8,6 +8,7 @@ select {
     width: 200px;
     border-radius: 4px;
     display: block;
+    min-width: 30vw;
   }
   
   /* Style pour la flèche du drop down */
@@ -69,7 +70,7 @@ select {
 }
 label {
   display: block;
-  margin-bottom: 5px;
+  margin: 5px;
   font-weight: bold;
 }
 

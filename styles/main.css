@@ -52,7 +52,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   margin: 20px auto;
   max-width: 70%;
   background-color: rgba(255, 255, 255, 0.8);
@@ -61,4 +61,25 @@
   border-color: #666666;
   border-style: solid;
   padding: 10px;
+  min-height: 70vh;
+}
+
+/* CSS pour le footer */
+footer {
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: block;
+  margin-top: auto;
+  color: white;
+  text-align: center;
+  padding: 10px;
+
+}
+
+
+
+footer p{
+  color : #FFFFFF;
 }

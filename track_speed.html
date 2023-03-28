@@ -15,44 +15,46 @@
     <meta name="language" content="fr">
 </head>
 <body>
-    <div class="error w3-panel w3-pale-red  ">
-			<h3>Erreur</h3>
-			<p class="error-text"></p>
-		<span onclick="this.parentElement.style.display='none'"
-			class="w3-button w3-display-topright close-btn">&times;</span>
-	</div>	  
-    <div id="loader">
-        <img src="icons/loader.gif" alt="Loading...">
-      </div>
-	  <a id="home-btn" href="index.html">
-		<img src="icons/home.png" alt="Home">
-	</a>
-	<h1><a href="index.html"><img alt="logo" src="icons/logo.png" class="icon">F1-Tools</a> - Visualisation de la vitesse sur un tour</h1>
-	<div class="main-content">
-		<div class="info">
-			<p class="info-text">Cette page permet de visualiser la vitesse d'un pilote sur un tour qualificatif.</p>
+	<div class="wrapper">
+		<div class="error">
+				<h3>Erreur</h3>
+				<p class="error-text"></p>
+			<span onclick="this.parentElement.style.display='none'"
+				class="w3-button w3-display-topright close-btn">&times;</span>
+		</div>	  
+		<div id="loader">
+			<img src="icons/loader.gif" alt="Loading...">
 		</div>
-		<div class="form">
-			<div class="select-group">
-				<label for="year-select">Année</label>
-				<select class="select" id="year-select"></select>
+		<a id="home-btn" href="index.html">
+			<img src="icons/home.png" alt="Home">
+		</a>
+		<h1><a href="index.html"><img alt="logo" src="icons/logo.png" class="icon">F1-Tools</a> - Visualisation de la vitesse sur un tour</h1>
+		<div class="main-content">
+			<div class="info">
+				<p class="info-text">Cette page permet de visualiser la vitesse d'un pilote sur un tour qualificatif.</p>
 			</div>
-			<div class="select-group">
-				<label for="race-select">Course</label>
-				<select class="select" id="race-select"></select>
+			<div class="form">
+				<div class="select-group">
+					<label for="year-select">Année</label>
+					<select class="select" id="year-select"></select>
+				</div>
+				<div class="select-group">
+					<label for="race-select">Course</label>
+					<select class="select" id="race-select"></select>
+				</div>
+				<div class="select-group">
+					<label for="driver1-select">Pilote 1</label>
+					<select class="select" id="driver1-select"></select>
+				</div>
 			</div>
-			<div class="select-group">
-				<label for="driver1-select">Pilote 1</label>
-				<select class="select" id="driver1-select"></select>
-			</div>
+			<button class="button" id="plot-btn">Afficher le graphique</button>
+			
+			<div class="plot-handler" id="plot-container"></div>
 		</div>
-		<button class="button" id="plot-btn">Afficher le graphique</button>
-		
-		<div class="plot-handler" id="plot-container"></div>
+		<footer>
+			<p>Copyright © 2023 F1-Tools - Tous droits réservés</p>
+		</footer>
 	</div>
-	<footer>
-        <p>Copyright © 2023 F1-Tools - Tous droits réservés</p>
-    </footer>
 	<script src="track_speed.js"></script>
 </body>
 </html>
